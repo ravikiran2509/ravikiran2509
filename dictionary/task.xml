@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="reference_index_include=active,all_tables.live_feed=true,all_tables.detail_row=short_description,all_tables.display_color=priority,text_index_translations=true,extension_model=hierarchy,hasListeners=true,largeTable=true" label="Task" max_length="40" name="task" sizeclass="2600" text_index="true" type="collection">
+        <element choice="1" label="category" max_length="40" name="x_9544_ravikiran_category" type="choice">
+            <choice>
+                <element label="-- New choice --" value="-- New choice --"/>
+                <element label="1" value="1"/>
+                <element label="2" value="2"/>
+            </choice>
+        </element>
+        <element choice="1" label="sub category" max_length="40" name="x_9544_ravikiran_sub_category" type="choice">
+            <choice/>
+        </element>
+    </element>
+</database>

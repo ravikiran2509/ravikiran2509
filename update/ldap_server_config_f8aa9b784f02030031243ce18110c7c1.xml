@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="ldap_server_config">
+    <ldap_server_config action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <attributes/>
+        <authenticate>true</authenticate>
+        <connect_timeout>10</connect_timeout>
+        <dn/>
+        <dn_field/>
+        <listen_interval>5</listen_interval>
+        <listener>true</listener>
+        <map/>
+        <mid_server/>
+        <name>asdf</name>
+        <paging>true</paging>
+        <password/>
+        <rdn>asgs</rdn>
+        <read_timeout>30</read_timeout>
+        <server_url>ldap://host-name:389/</server_url>
+        <ssl>false</ssl>
+        <sys_class_name>ldap_server_config</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-10-24 12:10:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>f8aa9b784f02030031243ce18110c7c1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>asdf</sys_name>
+        <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+        <sys_update_name>ldap_server_config_f8aa9b784f02030031243ce18110c7c1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-10-24 12:10:07</sys_updated_on>
+        <system_id>app128195.sin1.service-now.com:dev29975001</system_id>
+        <vendor>active_directory</vendor>
+    </ldap_server_config>
+</record_update>

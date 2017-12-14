@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>false</active>
+        <api_name>x_9544_ravikiran.RiskAssessment</api_name>
+        <client_callable>false</client_callable>
+        <description/>
+        <name>RiskAssessment</name>
+        <script><![CDATA[var RiskAssessment = Class.create();
+RiskAssessment.prototype = {
+   // allowdelegate: function() {
+		
+		
+		allowdelegate: function() {
+	/*	var id = this.getParameter('sysparm_id');
+		var tabClass = this.getParameter('sysparm_class');
+		
+			gs.log('The id in srcript include'+ id);
+			gs.log('The tabClass in srcript include'+ tabClass);  
+
+		var gr = new GlideRecord(tabClass);
+		gr.get(id);  */
+			
+		//var gr = new GlideRecord(change_request);
+		//gr.addQuery('sys_id', current.change_request);
+			var id = current.change_request.sys_id;
+			var num = current.number;
+			gs.log("sysid" +id );
+			gs.log("change number" + num );
+		
+		var ta = new GlideRecord('task_assessment');
+		ta.addQuery('task.sys_id', id);
+		ta.query();
+			
+			var count = ta.getRowCount();
+			gs.log('The count in srcript include'+ count);
+			
+			if( count > 1 ){
+				
+				return true;
+				
+			}else {
+				
+				return fasle;
+			}
+		
+		
+    },
+
+    type: 'RiskAssessment'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-08-22 10:44:58</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>c31a26e04f30030031243ce18110c7ea</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>RiskAssessment</sys_name>
+        <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+        <sys_update_name>sys_script_include_c31a26e04f30030031243ce18110c7ea</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-08-28 10:55:27</sys_updated_on>
+    </sys_script_include>
+</record_update>

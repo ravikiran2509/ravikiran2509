@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>true</applies_extended>
+        <condition/>
+        <description/>
+        <field>x_9544_ravikiran_category</field>
+        <global>true</global>
+        <messages/>
+        <name>my category</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+     if (isLoading || newValue == '') {
+      return;
+       }
+	
+	 var comp = g_form.getDisplayBox(g_form.resolveNameMap("company")).value;
+	//var comp = g_form.getValue('company');
+	 var cat = g_form.getValue('x_9544_ravikiran_category');
+	
+	 var sub = g_form.getValue('x_9544_ravikiran_sub_category');
+	
+	 alert('***My Alert company ' + comp);
+	 alert("my alert subcat" + sub);
+	 g_form.clearOptions('x_9544_ravikiran_sub_category');
+     g_form.setValue('x_9544_ravikiran_sub_category','-- None --'); 
+	
+
+	if(comp == "ACME Africa" && cat=="1" )	
+	{ 
+		
+		 alert("my alert Business system");	
+	     g_form.addOption('x_9544_ravikiran_sub_category', 'antivirus', 'Antivirus'); // value and label
+	     g_form.addOption('x_9544_ravikiran_sub_category', 'cpu', 'CPU');    
+	
+
+	}else if (comp == "ACME Africa" && cat=="2")
+	{
+		 g_form.addOption('x_9544_ravikiran_sub_category', 'dhcp', 'DHCP'); // value and label
+	     g_form.addOption('x_9544_ravikiran_sub_category', 'disk', 'Disk');  
+		
+		
+	}
+	
+	
+	}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-09-14 14:19:47</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>92287d8c4f11030031243ce18110c7f3</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>my category</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+        <sys_update_name>sys_script_client_92287d8c4f11030031243ce18110c7f3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-09-21 13:52:51</sys_updated_on>
+        <table>task</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

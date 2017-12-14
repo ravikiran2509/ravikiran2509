@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="cmn_schedule">
+    <cmn_schedule action="INSERT_OR_UPDATE">
+        <description/>
+        <document>cmn_rota</document>
+        <document_key>4cee6a214f22030031243ce18110c703</document_key>
+        <name>My test</name>
+        <parent/>
+        <read_only>false</read_only>
+        <sys_class_name>cmn_schedule</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-20 13:25:45</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>40ee6a214f22030031243ce18110c704</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>My test</sys_name>
+        <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+        <sys_update_name>cmn_schedule_40ee6a214f22030031243ce18110c704</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-20 13:25:45</sys_updated_on>
+        <time_zone>US/Pacific-New</time_zone>
+        <type>roster</type>
+    </cmn_schedule>
+</record_update>

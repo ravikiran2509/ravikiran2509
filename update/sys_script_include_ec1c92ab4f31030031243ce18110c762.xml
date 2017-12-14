@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_9544_ravikiran.AESJSUtil</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>AESJSUtil</name>
+        <script><![CDATA[var AESJSUtil = Class.create();  
+AESJSUtil.prototype = Object.extendsObject(AbstractAjaxProcessor, {  
+  
+    //Returns both key and iv in hex format delimited by a :.  
+    getKeyIVFromPropHex: function () {  
+        var ge = new GlideEncrypter();  
+        var key = gs.getProperty("hfhs.default.encryption.key");  
+        var iv = gs.getProperty("hfhs.default.encryption.iv");  
+        return "" + ge.decrypt(key) + ":" + ge.decrypt(iv);  
+    },  
+    type: 'AESJSUtil'  
+});  
+  
+AESJSUtil.getRandomKeys = function (keyLength) {  
+    if (keyLength != "16" && keyLength != "24" && keyLength != "32") {  
+        throw "Key length must be 16, 24 or 32";  
+        return;  
+    }  
+    var l = Number(keyLength);  
+    var keys = {};  
+    keys.key = [];  
+    keys.iv = [];  
+    for (var i = 0; i < l; i++) {  
+        // 1 in 5 chance that the next random number is chosen for our key.  
+        // This helps obscure the key by selecting values at random points in time instead of one immediately following the other.  
+        while (Math.floor((Math.random() * 256) % 5) != 0) { }  
+        keys.key[i] = Math.floor(Math.random() * 256);  
+        keys.iv[i] = Math.floor(Math.random() * 256);  
+    }  
+    return keys;  
+};  
+  
+AESJSUtil.getEncryptedRandomKeys = function (keyLength) {  
+    var keys = AESJSUtil.getRandomKeys(keyLength);  
+    var ge = new GlideEncrypter();  
+    keys.keyen = ge.encrypt(aesjs.util.convertBytesToString(keys.key, "hex"));  
+    keys.iven = ge.encrypt(aesjs.util.convertBytesToString(keys.iv, "hex"));  
+    return keys;  
+};  
+  
+AESJSUtil.getKeyFromProp = function () {  
+    var ge = new GlideEncrypter();  
+    var key = gs.getProperty("hfhs.default.encryption.key");  
+    return aesjs.util.convertStringToBytes("" + ge.decrypt(key), "hex");  
+};  
+  
+AESJSUtil.getIVFromProp = function () {  
+    var ge = new GlideEncrypter();  
+    var iv = gs.getProperty("hfhs.default.encryption.iv");  
+    return aesjs.util.convertStringToBytes("" + ge.decrypt(iv), "hex");  
+};  
+  
+AESJSUtil.encryptValue = function (text, key, iv) {  
+    if (!key)  
+        key = AESJSUtil.getKeyFromProp();  
+    if (!iv)  
+        iv = AESJSUtil.getIVFromProp();  
+  
+    // Convert text to bytes (text must be a multiple of 16 bytes)  
+    text += ('                ').substr(text.length % 16);  
+    var textBytes = aesjs.util.convertStringToBytes(text);  
+    var aesCbc = new aesjs.ModeOfOperation.cbc(key, iv);  
+    var encryptedBytes = aesCbc.encrypt(textBytes);  
+    var encryptedHex = aesjs.util.convertBytesToString(encryptedBytes, "hex");  
+    return encryptedHex;  
+};  
+  
+AESJSUtil.decryptValue = function (encryptedText, key, iv) {  
+    if (!key)  
+        key = AESJSUtil.getKeyFromProp();  
+    if (!iv)  
+        iv = AESJSUtil.getIVFromProp();  
+    var encryptedBytes = aesjs.util.convertStringToBytes(encryptedText, "hex");  
+    var aesCbc = new aesjs.ModeOfOperation.cbc(key, iv);  
+    var decryptedBytes = aesCbc.decrypt(encryptedBytes);  
+    var decryptedText = aesjs.util.convertBytesToString(decryptedBytes);  
+    return decryptedText.trim();  
+};  
+  
+AESJSUtil.decryptValueWithGE = function (v) {  
+    var ge = new GlideEncrypter();  
+    return ge.decrypt(v);  
+};  
+  
+AESJSUtil.encryptValueWithGE = function (v) {  
+    var ge = new GlideEncrypter();  
+    return ge.encrypt(v);  
+};  
+  
+AESJSUtil.scrubText = function (textValue) {  
+    var tv = "" + textValue;  
+    var matches = tv.match(/\d{7,12}|\d{3}[^0-9!\n]\d\d[^0-9!\n]\d{3,}/gi);  
+    if (matches) {  
+        matches = (new ArrayUtil()).unique(matches);  
+        for (var i = 0; i < matches.length; i++) {  
+            var ev = AESJSUtil.encryptValue(matches[i]);  
+            tv = tv.replace(matches[i], "{ENCRYPTED:" + ev + "}");  
+        }  
+    }  
+    return tv;  
+};  
+  
+AESJSUtil.descrubText = function (textValue) {  
+    var tv = "" + textValue;  
+    var matches = tv.match(/\{ENCRYPTED:.*?\}/gi);  
+    if (matches) {  
+        matches = (new ArrayUtil()).unique(matches);  
+        for (var i = 0; i < matches.length; i++) {  
+            var ev = matches[i].toString().replace("{ENCRYPTED:", "").replace("}", "");  
+            var dv = AESJSUtil.decryptValue(ev);  
+            tv = tv.replace(matches[i], dv);  
+        }  
+    }  
+    return tv;  
+};  ]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-10-20 10:26:08</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>ec1c92ab4f31030031243ce18110c762</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>AESJSUtil</sys_name>
+        <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+        <sys_update_name>sys_script_include_ec1c92ab4f31030031243ce18110c762</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-10-20 10:26:08</sys_updated_on>
+    </sys_script_include>
+</record_update>

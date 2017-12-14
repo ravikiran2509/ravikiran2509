@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <applies_extended>false</applies_extended>
+        <condition/>
+        <description/>
+        <field>close_code</field>
+        <global>true</global>
+        <messages/>
+        <name>My_Close_code</name>
+        <order/>
+        <script><![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+     if (isLoading || newValue == '') {
+      return;
+       }
+	
+	
+	 var clo = g_form.getValue('close_code');
+	 alert('***My Alert company ' + clo );
+     
+   //Type appropriate comment here, and begin script below
+	
+	if((clo == "Solved (Work Around)") || (clo == "Solved (Permanently)" ))
+		{
+			g_form.setValue('x_9544_ravikiran_resolve_code','Application Issue'); 
+			
+		} else if ( clo == 'Not Solved (Not Reproducible)')
+		{
+			g_form.setValue('x_9544_ravikiran_resolve_code','Cabling Issue'); 
+			
+		}
+   
+}]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-08-21 08:43:14</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>cd5409104f30030031243ce18110c732</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>My_Close_code</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+        <sys_update_name>sys_script_client_cd5409104f30030031243ce18110c732</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-08-21 08:54:36</sys_updated_on>
+        <table>incident</table>
+        <type>onChange</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

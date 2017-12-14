@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script_client">
+    <sys_script_client action="INSERT_OR_UPDATE">
+        <active>false</active>
+        <applies_extended>true</applies_extended>
+        <condition/>
+        <description/>
+        <field>active</field>
+        <global>true</global>
+        <messages/>
+        <name>my category_onload</name>
+        <order/>
+        <script><![CDATA[function onLoad() {
+   //Type appropriate comment here, and begin script below
+	
+	 var comp = g_form.getDisplayBox(g_form.resolveNameMap("company")).value;
+	//var comp = g_form.getValue('company');
+	
+	
+	 var sub = g_form.getValue('x_9544_ravikiran_sub_category');
+	
+	 alert('***My Alert company ' + comp);
+	 alert("my alert subcat" + sub);
+	 g_form.clearOptions('x_9544_ravikiran_sub_category');
+     //g_form.setValue('x_9544_ravikiran_sub_category','-- None --'); 
+	//g_form.setValue('x_9544_ravikiran_sub_category',sub);
+	
+	 var cat = g_form.getValue('x_9544_ravikiran_category');
+
+	if(comp == "ACME Africa" && cat=="1" )	
+	{ 
+		
+		 alert("my alert Business system");	
+		 g_form.addOption('x_9544_ravikiran_sub_category', '', '-- None --');
+	     g_form.addOption('x_9544_ravikiran_sub_category', 'antivirus', 'Antivirus'); // value and label
+	     g_form.addOption('x_9544_ravikiran_sub_category', 'cpu', 'CPU'); 
+		//g_form.addOption('x_9544_ravikiran_sub_category', '', '-- None --');
+	
+
+	}else if (comp == "ACME Africa" && cat=="2")
+	{    
+		 g_form.addOption('x_9544_ravikiran_sub_category', '', '-- None --');
+		 g_form.addOption('x_9544_ravikiran_sub_category', 'dhcp', 'DHCP'); // value and label
+	     g_form.addOption('x_9544_ravikiran_sub_category', 'disk', 'Disk');  
+		 //g_form.addOption('x_9544_ravikiran_sub_category', '', '-- None --');
+		
+	}
+   
+	g_form.setValue('x_9544_ravikiran_sub_category',sub);
+	 
+}
+
+
+
+]]></script>
+        <sys_class_name>sys_script_client</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-09-20 14:35:27</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a5a5788a4f11030031243ce18110c776</sys_id>
+        <sys_mod_count>22</sys_mod_count>
+        <sys_name>my category_onload</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+        <sys_update_name>sys_script_client_a5a5788a4f11030031243ce18110c776</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-09-21 15:04:57</sys_updated_on>
+        <table>task</table>
+        <type>onLoad</type>
+        <ui_type>0</ui_type>
+        <view/>
+    </sys_script_client>
+</record_update>

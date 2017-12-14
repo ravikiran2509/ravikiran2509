@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="hasWorkflow=true,text_index_translations" audit="true" create_roles="catalog_admin" extends="task" label="Requested Item" max_length="40" name="sc_req_item" sizeclass="22" text_index="true" type="collection">
+        <element attributes="no_audit=true,no_sort=true" label="Encrypt1" max_length="65536" name="x_9544_ravikiran_encrypt1" type="glide_encrypted"/>
+        <element attributes="no_audit=true,no_sort=true" label="MY HR field" max_length="65536" name="x_9544_ravikiran_my_hr_field" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="test" max_length="40" name="x_9544_ravikiran_test" type="string">
+            <choice/>
+        </element>
+    </element>
+</database>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="x_9544_ravikiran_category" label="category" language="en" table="task">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>x_9544_ravikiran_category</element>
+            <help/>
+            <hint/>
+            <label>category</label>
+            <language>en</language>
+            <name>task</name>
+            <plural>categories</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2017-09-14 13:54:10</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>4bd2f14c4f11030031243ce18110c733</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>category</sys_name>
+            <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+            <sys_update_name>sys_documentation_task_x_9544_ravikiran_category_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2017-09-14 13:54:10</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

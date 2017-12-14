@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element attributes="email_client=true,hasWorkflow=true,live_feed=true,text_index_translations" audit="true" extends="task" label="Incident" max_length="40" name="incident" sizeclass="56" text_index="true" type="collection">
+        <element attributes="no_audit=true,no_sort=true" label="HR_encrypt1" max_length="65536" name="x_9544_ravikiran_hr_encrypt1" type="glide_encrypted"/>
+        <element attributes="no_audit=true,no_sort=true" label="HR_encrypt_2" max_length="65536" name="x_9544_ravikiran_hr_encrypt_2" type="glide_encrypted"/>
+        <element attributes="no_audit=true,no_sort=true" label="My encrypt" max_length="65536" name="x_9544_ravikiran_my_encrypt" type="glide_encrypted"/>
+        <element attributes="no_audit=true,no_sort=true" label="My encrypt3" max_length="65536" name="x_9544_ravikiran_my_encrypt3" type="glide_encrypted"/>
+        <element attributes="no_audit=true,no_sort=true" label="my encrypted" max_length="65536" name="x_9544_ravikiran_my_encrypted" type="glide_encrypted"/>
+        <element attributes="no_audit=true,no_sort=true" label="My Field" max_length="65536" name="x_9544_ravikiran_my_field" type="glide_encrypted"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Resolve code" max_length="40" name="x_9544_ravikiran_resolve_code" type="string">
+            <choice/>
+        </element>
+    </element>
+</database>

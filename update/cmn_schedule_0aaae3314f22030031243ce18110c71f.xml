@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="cmn_schedule">
+    <cmn_schedule action="INSERT_OR_UPDATE">
+        <description/>
+        <document>sys_user</document>
+        <document_key>62526fa1d701120035ae23c7ce6103c6</document_key>
+        <name>Guillermo Frohlich</name>
+        <parent/>
+        <read_only>false</read_only>
+        <sys_class_name>cmn_schedule</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-11-21 12:25:25</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>0aaae3314f22030031243ce18110c71f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Guillermo Frohlich</sys_name>
+        <sys_package display_value="Ravikiran" source="x_9544_ravikiran">c3512d034f20030031243ce18110c75f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Ravikiran">c3512d034f20030031243ce18110c75f</sys_scope>
+        <sys_update_name>cmn_schedule_0aaae3314f22030031243ce18110c71f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2017-11-21 12:26:27</sys_updated_on>
+        <time_zone>Europe/London</time_zone>
+        <type/>
+    </cmn_schedule>
+</record_update>
